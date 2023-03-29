@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application form</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="{% static 'drop.js' %}"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="{% static 'check.js' %}">
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+</script>
+</head>
+<body>
+<h3 style="color:blue">Application Form</h3>
+<form method="post" >
+    {% csrf_token %}
+    <br>
+    Name:<input type="text" name="name" placeholder="Enter your name"><br><br>
+    Date of Birth:<input type="date" name="date" placeholder="Enter your DOB"><br><br>
+    Age:<input type="number" name="age" placeholder="Enter your age"><br><br>
+    Gender:<input type="text" name="gender" placeholder="Enter your gender"><br><br>
+    phone Number:<input type="number" name="phone" placeholder="Enter your Phone no:"><br><br>
+	Mail id:<input type="email" name="Email" placeholder="Enter your emailid"><br><br>
+    Address:<input type="text" name="address" placeholder="Enter your address"><br><br>
+    Distict: <select name="district" id="district">
+    <option value="" selected="selected">Select District</option>
+     </select>
+    <br><br>
+    Branch:<select name="branch" id="branch">
+    <option value="" selected="selected">select District first</option>
+    </select>
+    <br><br>
+    Account type:
+  <select name="accounts">
+      <option >Current account</option>
+      <option >Savings account</option>
+      <option >Salary account</option>
+      <option >Fixed deposit account</option>
+      <option >Recurring deposit account</option>
+      <option >NRI account</option>
+  </select>
+  <br><br>
+    Provide Materials:<br>
+     Debit Card<input type="checkbox" class="chkbox" value="Debit"><br>
+     Credit Card<input type="checkbox" class="chkbox" value="Credit"><br>
+     Cheque book<input type="checkbox" class="chkbox"  value="Book"><br>
+    <br>
+    <input type="text" id="chktext" name="materials"><br><br>
+    <input type="submit" id="but1">
+
+    <br>
+
+</form>
+<form action="logout">
+            <div style = "display: flex; justify-content:flex-start">
+            <button class="button" >Logout</button>
+            </div>
+            </form>
+
+<br>
+<br>
+</body>
+</html>
